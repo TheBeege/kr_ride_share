@@ -38,6 +38,10 @@ public class User implements java.io.Serializable {
         return userID;
     }
 
+    public void setUserID(Long userID) {
+        this.userID = userID;
+    }
+
     public String getFamilyName() {
         return familyName;
     }

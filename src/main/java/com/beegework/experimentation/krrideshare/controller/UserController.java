@@ -41,6 +41,7 @@ public class UserController {
     // TODO: Figure out how best to do this without View described by tutorial https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
     @RequestMapping(value = "/user/{userID}", method = RequestMethod.PUT)
     public User updateUser(@PathVariable Long userID, @RequestBody User user) {
+        user.setUserID(userID);
         return saveUser(user);
     }
 
