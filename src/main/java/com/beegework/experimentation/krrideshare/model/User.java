@@ -18,7 +18,7 @@ public class User implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userID;
+    private Long userID;
 
     private String familyName, givenName, photoURL;
 
@@ -34,7 +34,7 @@ public class User implements java.io.Serializable {
         this.photoURL = photoURL;
     }
 
-    public long getUserID() {
+    public Long getUserID() {
         return userID;
     }
 

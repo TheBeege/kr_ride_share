@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @Configuration
 @EnableAutoConfiguration
 @EntityScan(basePackages = {"com.beegework.experimentation.krrideshare.model"})
-@EnableJpaRepositories(basePackages = {"com.beegework.experimentation.krrideshare.repositories"})
+@EnableJpaRepositories(basePackages = {"com.beegework.experimentation.krrideshare.repository"})
 @EnableTransactionManagement
 public class RepositoryConfiguration {
 }

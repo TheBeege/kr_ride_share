@@ -4,7 +4,7 @@ package com.beegework.experimentation.krrideshare.bootstrap;
  * Created by thebeege on 11/18/16.
  */
 import com.beegework.experimentation.krrideshare.model.User;
-import com.beegework.experimentation.krrideshare.repositories.UserRepository;
+import com.beegework.experimentation.krrideshare.repository.UserRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;

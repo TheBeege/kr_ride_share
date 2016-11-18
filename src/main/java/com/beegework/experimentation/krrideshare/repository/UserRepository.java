@@ -1,4 +1,4 @@
-package com.beegework.experimentation.krrideshare.repositories;
+package com.beegework.experimentation.krrideshare.repository;
 
 import com.beegework.experimentation.krrideshare.model.User;
 import org.springframework.data.repository.CrudRepository;

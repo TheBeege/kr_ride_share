@@ -1,4 +1,4 @@
-package com.beegework.experimentation.krrideshare.repositories;
+package com.beegework.experimentation.krrideshare.repository;
 
 /**
  * Created by thebeege on 11/18/16.
