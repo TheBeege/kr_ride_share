@@ -26,7 +26,7 @@ public class UserController {
     }
 
     // Read
-    @RequestMapping(value = "/user/{id}")
+    @RequestMapping(value = "/user/{userID}")
     public User getUser(@PathVariable Long userID) {
         return userService.getUserByID(userID); // I _think_ Spring will parse the user properly
     }
@@ -39,13 +39,13 @@ public class UserController {
 
     // Update
     // TODO: Figure out how best to do this without View described by tutorial https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/user/{userID}", method = RequestMethod.PUT)
     public User updateUser(@PathVariable Long userID, @RequestBody User user) {
         return saveUser(user);
     }
 
     // Delete
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/{userID}", method = RequestMethod.DELETE)
     public String delete(@PathVariable Long userID) {
         userService.deleteUser(userID);
         return "redirect:/user";
