@@ -14,12 +14,12 @@ import java.util.concurrent.atomic.AtomicLong;
 public class UserController {
     private static final String template = "Hello, %s!";
 
-    @RequestMapping("/user")
+    /*@RequestMapping("/user")
     public User greeting(
                 @RequestParam(value="familyName", defaultValue="Kim") String familyName
                 ,@RequestParam(value="givenName", defaultValue="Alex") String givenName
                 ,@RequestParam(value="photoURL", defaultValue="fake.com") String photoURL
             ) {
         return new User(familyName, givenName, photoURL);
-    }
+    }*/
 }

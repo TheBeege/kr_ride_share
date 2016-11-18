@@ -3,25 +3,24 @@ package com.beegework.experimentation.krrideshare.model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by thebeege on 11/2/16.
  */
-public class User {
+@Entity
+public class User implements java.io.Serializable {
 
     private static final Logger log = LoggerFactory.getLogger(User.class);
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long userID;
 
     private String familyName, givenName, photoURL;
-
-    public User(String familyName, String givenName, String photoURL) {
-        this.familyName = familyName;
-        this.givenName = givenName;
-        this.photoURL = photoURL;
-    }
-    public void setUserID(long userID) {
-        this.userID = userID;
-    }
 
     public void setFamilyName(String familyName) {
         this.familyName = familyName;
