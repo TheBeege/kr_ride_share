@@ -29,6 +29,13 @@ public class User implements java.io.Serializable {
     @Column(name = "photo_url")
     private String photoURL;
 
+    @Column(name = "is_driver")
+    private boolean isDriver;
+
+    @OneToOne
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
+
     public void setFamilyName(String familyName) {
         this.familyName = familyName;
     }
@@ -59,6 +66,14 @@ public class User implements java.io.Serializable {
 
     public String getPhotoURL() {
         return photoURL;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     @Override
