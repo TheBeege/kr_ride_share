@@ -3,24 +3,31 @@ package com.beegework.experimentation.krrideshare.model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by thebeege on 11/2/16.
  */
 @Entity
+@Table(name = "`user`") // user is a reserved word in psql
 public class User implements java.io.Serializable {
 
     private static final Logger log = LoggerFactory.getLogger(User.class);
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_user_id_seq")
+    @SequenceGenerator(name="user_user_id_seq", sequenceName="user_user_id_seq", allocationSize=1)
+    @Column(name = "user_id")
     private Long userID;
 
-    private String familyName, givenName, photoURL;
+    @Column(name = "family_name")
+    private String familyName;
+
+    @Column(name = "given_name")
+    private String givenName;
+
+    @Column(name = "photo_url")
+    private String photoURL;
 
     public void setFamilyName(String familyName) {
         this.familyName = familyName;
