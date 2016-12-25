@@ -59,7 +59,7 @@ public class Vehicle {
         this.plate = plate;
     }
 
-    @OneToOne(mappedBy = "vehicle_id")
+    @OneToOne(mappedBy = "vehicle")
     public User getUser() {
         return user;
     }

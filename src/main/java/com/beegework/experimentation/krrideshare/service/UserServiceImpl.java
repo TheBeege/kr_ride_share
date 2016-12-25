@@ -5,6 +5,9 @@ import com.beegework.experimentation.krrideshare.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 /**
  * Created by thebeege on 11/18/16.
  */
@@ -12,6 +15,9 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
@@ -26,8 +32,14 @@ public class UserServiceImpl implements UserService {
         return userRepository.findOne(userID);
     }
 
+    // This gives us the merge behavior we expect when saving a user with an ID already
     public User saveUser(User user) {
-        return userRepository.save(user);
+        if (user.getUserID() == null) {
+            entityManager.persist(user);
+            return user;
+        } else {
+            return entityManager.merge(user);
+        }
     }
 
     public void deleteUser(Long userID) {

@@ -32,7 +32,7 @@ public class User implements java.io.Serializable {
     @Column(name = "is_driver")
     private boolean isDriver;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
