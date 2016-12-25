@@ -15,8 +15,10 @@ public class Vehicle {
     @Column(name = "vehicle_id")
     private Long vehicleID;
 
-    private String make, model, year, plate;
+    private String make, model, plate;
+    private int year;
 
+    @OneToOne(mappedBy = "vehicle")
     private User user;
 
     public Long getVehicleID() {
@@ -43,11 +45,11 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -59,7 +61,6 @@ public class Vehicle {
         this.plate = plate;
     }
 
-    @OneToOne(mappedBy = "vehicle")
     public User getUser() {
         return user;
     }
